@@ -1,9 +1,9 @@
 <template>
     <div class="header">
-        <div class="header-left"><div class="iconfont icon-back">&#xe624;</div></div>
-        <div class="header-input"><span class="iconfont">&#xe632;</span>输入城市/景点/游玩主题</div>
+        <div class="header-left"><div class="iconfont icon-back">&#xe62e;</div></div>
+        <div class="header-input"><span class="iconfont">&#xe638;</span>输入城市/景点/游玩主题</div>
         <div class="header-right">城市
-            <span class="iconfont icon-arrow">&#xe64a;</span>
+            <span class="iconfont icon-arrow">&#xe62b;</span>
         </div>
     </div>
 </template>

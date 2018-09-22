@@ -88,6 +88,7 @@
 @import '~styles/varibles';
 @import '~styles/mixins';
 .icons {
+    background-color #fff
     >>> .swiper-container {        
         height 0
         padding-bottom 50%
@@ -104,7 +105,7 @@
             left 0
             right 0
             bottom .22rem
-            padding .2rem
+            padding .25rem
             text-align center
             img {
                 height 100%
