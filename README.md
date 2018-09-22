@@ -1,4 +1,4 @@
-# Traveller
+# Travel
 
 ## Project setup
 ```
