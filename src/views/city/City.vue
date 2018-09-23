@@ -5,7 +5,7 @@
 <script>
     import cityHeader from '@/components/city/Header'
     export default {
-        name: 'Home',
+        name: 'city',
         components: {
             cityHeader
         },
