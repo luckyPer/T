@@ -67,26 +67,29 @@
         	{
                 "id": "0001",
                 "imgUrl": "http://img1.qunarzz.com/sight/p0/1704/c9/c936f3fccfc6d7eda3.img.jpg_200x200_46052773.jpg",
-                "commet": "1212",
+                "comment": "32412",
                 "price": "78",
                 "area": "黄浦区",
-                "desc": "上海杜莎夫人蜡像馆"
+                "desc": "上海杜莎夫人蜡像馆",
+                "score": "4.9"
             },
             {
                 "id": "0002",
                 "imgUrl": "http://img1.qunarzz.com/sight/p0/1704/c9/c936f3fccfc6d7eda3.img.jpg_200x200_46052773.jpg",
-                "commet": "1212",
+                "comment": "12122",
                 "price": "78",
                 "area": "黄浦区",
-                "desc": "上海杜莎夫人蜡像馆"
+                "desc": "上海杜莎夫人蜡像馆",
+                "score": "3.9"
             },
             {
                 "id": "0003",
                 "imgUrl": "http://img1.qunarzz.com/sight/p0/1704/c9/c936f3fccfc6d7eda3.img.jpg_200x200_46052773.jpg",
-                "commet": "1212",
+                "comment": "13452",
                 "price": "78",
                 "area": "黄浦区",
-                "desc": "上海杜莎夫人蜡像馆"
+                "desc": "上海杜莎夫人蜡像馆",
+                "score": "3.4"
             }
         ],
         "weekendList": [

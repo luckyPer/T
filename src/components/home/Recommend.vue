@@ -10,7 +10,7 @@
                     <div class="recommend-info">
                         <div class="recommend-title">{{item.desc}}</div>
                         <div class="recommend-comment">
-                            <span class="star"></span>
+                            <star :size="24" :score="item.score"></star>
                             <span class="comment">{{item.comment}} 评论</span>
                         </div>              
                         <div class="recommend-price">
@@ -25,10 +25,14 @@
 </template>
 
 <script>
+    import star from '../star/star.vue' 
     export default {
         name: 'HomeRecommend',
         props: {
             recommendList: Array
+        },
+        components: {
+            star
         }
     }
 </script>
@@ -66,6 +70,7 @@
                 height .34rem
                 margin-top: .14rem;
                 .comment {
+                    margin-left .3rem
                     color #616161
                     font-size .24rem
                 }
