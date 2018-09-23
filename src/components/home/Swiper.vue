@@ -1,9 +1,9 @@
 <template>
     <div class="wrapper">
         <swiper :options="swiperOption">
-            <swiper-slide><img class="image-wrapper" src="https://img1.qunarzz.com/qs/1808/e2/e2747a568a40c102.jpg" alt=""></swiper-slide>
-            <swiper-slide><img class="image-wrapper"  src="https://img1.qunarzz.com/qs/1808/64/7b13d22df73df002.jpg" alt=""></swiper-slide>
-            <swiper-slide><img class="image-wrapper"  src="https://img1.qunarzz.com/qs/1809/cb/25012195ae916f02.jpg" alt=""></swiper-slide>
+           <swiper-slide v-for="item in swiperList" :key="item.id">
+                <img class="image-wrapper" :src="item.imgUrl" alt="">
+            </swiper-slide>
             <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
     </div>
@@ -21,6 +21,9 @@
                     loop: true
                 }
             }
+        },
+        props: {
+            swiperList: Array
         },
         computed: {
         },

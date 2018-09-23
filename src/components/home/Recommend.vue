@@ -2,20 +2,20 @@
     <div class="module-group recommend-group">
         <p><span class="iconfont icon-like"></span>猜你喜欢</p>
         <ul class="recommend-list">
-            <li class="recommend-item">
+            <li class="recommend-item" v-for="item in recommendList" :key="item.id">
                 <a href="">
                     <div class="recommend-img">
-                        <img src="http://img1.qunarzz.com/sight/p0/1704/c9/c936f3fccfc6d7eda3.img.jpg_200x200_46052773.jpg" alt="">
+                        <img :src="item.imgUrl" alt="">
                     </div>
                     <div class="recommend-info">
-                        <div class="recommend-title">上海杜莎夫人蜡像馆</div>
+                        <div class="recommend-title">{{item.desc}}</div>
                         <div class="recommend-comment">
                             <span class="star"></span>
-                            <span class="comment">1212 评论</span>
+                            <span class="comment">{{item.comment}} 评论</span>
                         </div>              
                         <div class="recommend-price">
-                            <span class="price">78</span>起
-                            <span class="area">黄浦区</span>
+                            <span class="price">{{item.price}}</span>起
+                            <span class="area">{{item.area}}</span>
                         </div>
                     </div>
                 </a>
@@ -26,7 +26,10 @@
 
 <script>
     export default {
-        name: 'HomeRecommend'
+        name: 'HomeRecommend',
+        props: {
+            recommendList: Array
+        }
     }
 </script>
 

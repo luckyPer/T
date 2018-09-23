@@ -18,54 +18,11 @@
         name: 'HomeIcons',
         data () {
             return {
-                iconList: [
-                    {
-                        id: '0001',
-                        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-                        imgDesc: '景点门票'
-                    },
-                    {
-                        id: '0002',
-                        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-                        imgDesc: '一日游'
-                    },
-                    {
-                        id: '0003',
-                        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-                        imgDesc: '上海必游'
-                    },
-                    {
-                        id: '0004',
-                        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png',
-                        imgDesc: '游乐场'
-                    },
-                    {
-                        id: '0005',
-                        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/ea/01d081dacb03cc02.png',
-                        imgDesc: '赏秋色'
-                    },
-                    {
-                        id: '0006',
-                        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1805/57/1e29afd06f881102.png',
-                        imgDesc: '普陀山'
-                    },
-                    {
-                        id: '0007',
-                        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/b1/528a9e80403b8c02.png',
-                        imgDesc: '上海欢乐谷'
-                    },
-                    {
-                        id: '0008',
-                        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png',
-                        imgDesc: '动物园'
-                    },
-                    {
-                        id: '0009',
-                        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/de/f26be47a6bf02a02.png',
-                        imgDesc: '上海迪士尼'
-                    }
-                ],
+                
             }
+        },
+        props: {
+            iconList: Array
         },
         computed: {
             pages () {
