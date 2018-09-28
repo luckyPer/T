@@ -33,7 +33,7 @@
             }
         },
         methods: {
-            ajxGetList: function(){
+            ajxGetList(){
                 axios.get('/api/index.json').then((response) => {
                     const res = response.data;
                     if(res.status) {
@@ -45,9 +45,12 @@
                 });
             }
         },
-        mounted: function () {
+        mounted() {
             this.ajxGetList();
-        }
+        },
+        // activated() {
+        //     //试着去改变keep-alive 缓存起来的内容
+        // }
     }
 </script>
 
