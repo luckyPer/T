@@ -48,7 +48,7 @@
         },
         watch: {
             cityCode() {
-                console.log(this.$refs)
+                //console.log(this.$refs)
                 if(this.cityCode)
                     this.scroll.scrollToElement(this.$refs[this.cityCode][0],300)
             }
