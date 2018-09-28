@@ -3,7 +3,7 @@
         <p><span class="iconfont icon-like"></span>猜你喜欢</p>
         <ul class="recommend-list">
             <li class="recommend-item" v-for="item in recommendList" :key="item.id">
-                <a href="">
+                <router-link to="/detail">
                     <div class="recommend-img">
                         <img :src="item.imgUrl" alt="">
                     </div>
@@ -18,7 +18,7 @@
                             <span class="area">{{item.area}}</span>
                         </div>
                     </div>
-                </a>
+                </router-link>
             </li>
         </ul>
     </div>
