@@ -2,8 +2,8 @@
     <div>      
         <city-header></city-header>
         <city-search></city-search>
-        <city-list :hotCitiesList="hotCitiesList" :citiesList="citiesList"></city-list>
-        <city-alphabet :citiesList="citiesList"></city-alphabet>
+        <city-list :hotCitiesList="hotCitiesList" :citiesList="citiesList" :cityCode="letter"></city-list>
+        <city-alphabet :citiesList="citiesList" v-on:changeCityList="change"></city-alphabet>
     </div>
 </template>
 
@@ -24,7 +24,8 @@
         data() {
             return {
                 hotCitiesList: [],
-                citiesList: {}
+                citiesList: {},
+                letter: ""
             }
         },
         methods: {
@@ -36,6 +37,9 @@
                         this.hotCitiesList = res.data.hotCities;
                     }
                 });
+            },
+            change(msg) {
+                this.letter = msg
             }
         },
         mounted () {

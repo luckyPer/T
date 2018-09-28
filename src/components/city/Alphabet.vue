@@ -1,7 +1,7 @@
 <template>
     <div class="alphabet">
         <ul class="list">
-            <li class="item" v-for="(item, key) in citiesList" :key="key">{{key}}</li>
+            <li class="item" v-for="(item, key) in citiesList" :key="key" @click="handleLetterClick">{{key}}</li>
         </ul>
     </div>
 </template>
@@ -18,8 +18,10 @@
             }
         },
         methods: {
-
-        },
+            handleLetterClick(e) {
+                this.$emit('changeCityList', e.target.innerText);
+            }
+        }
     }
 </script>
 
