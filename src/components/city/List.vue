@@ -5,7 +5,7 @@
                 <h2 class="title">当前城市</h2>
                 <ul class="button-list clearfix">
                     <li class="button-wrapper">
-                        <div class="button">上海</div>
+                        <div class="button">{{city}}</div>
                     </li>
                 </ul>
             </div>
@@ -13,7 +13,7 @@
                 <h2 class="title">热门城市</h2>
                 <ul class="button-list clearfix">
                     <li class="button-wrapper" v-for="item in hotCitiesList" :key="item.id">
-                        <div class="button">{{item.name}}</div>
+                        <div class="button" @click="handelCityClick(item.name)">{{item.name}}</div>
                     </li>
                 </ul>
             </div>
@@ -21,7 +21,7 @@
                 <h2 class="title">{{key}}</h2>
                 <ul class="item-list">
                     <li class="item-wrapper border-bottom" v-for="city in item" :key="city.id">
-                        <div class="item">{{city.name}}</div>
+                        <div class="item" @click="handelCityClick(city.name)">{{city.name}}</div>
                     </li>
                 </ul>
             </div>
@@ -31,6 +31,7 @@
 
 <script>
     import BScroll from 'better-scroll'
+    import { mapState } from 'vuex'
     export default {
         name: 'CityList',
         props: {
@@ -39,12 +40,15 @@
             cityCode: String
         },
         methods: {
+            handelCityClick(city) {
+                this.$store.commit('changeCityEvent', city);
+                this.$router.push('/');
+            }
         },
         mounted () {
             const wrapper = document.querySelector('.list');
             //this.$refs.wrapper
-            this.scroll = new BScroll(wrapper);
-            
+            this.scroll = new BScroll(wrapper);           
         },
         watch: {
             cityCode() {
@@ -52,6 +56,9 @@
                 if(this.cityCode)
                     this.scroll.scrollToElement(this.$refs[this.cityCode][0],300)
             }
+        },      
+        computed: {
+            ...mapState(['city'])
         }
     }
 </script>

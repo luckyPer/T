@@ -6,7 +6,7 @@
         <div class="search-content" :class="{'search-cover': showCover}" v-show="showSearchContent">
             <ul class="item-list">
                 <li class="item-wrapper border-bottom" v-for="item in list" :key="item.id">
-                    <div class="item">{{item.name}}</div>
+                    <div class="item" @click="handelCityClick(item.name)">{{item.name}}</div>
                 </li>
             </ul>
         </div>
@@ -44,6 +44,10 @@
                 if(this.keyword.length ==  0) {
                     this.showSearchContent = false;
                 }
+            },
+            handelCityClick(city) {
+                this.$store.emmit('changeCityEvent', city);
+                this.$router.push('/');
             }
         },        
         mounted () {
