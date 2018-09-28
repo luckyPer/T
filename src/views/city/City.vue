@@ -2,29 +2,44 @@
     <div>      
         <city-header></city-header>
         <city-search></city-search>
-        <city-list></city-list>
+        <city-list :hotCitiesList="hotCitiesList" :citiesList="citiesList"></city-list>
+        <city-alphabet :citiesList="citiesList"></city-alphabet>
     </div>
 </template>
 
 <script>
+    import axios from 'axios'
     import CityHeader from '@/components/city/Header'
     import CitySearch from '@/components/city/Search'
     import CityList from '@/components/city/List'
+    import CityAlphabet from '@/components/city/Alphabet'
     export default {
         name: 'city',
         components: {
             CityHeader,
             CitySearch,
-            CityList
+            CityList,
+            CityAlphabet
         },
         data() {
             return {
-                
+                hotCitiesList: [],
+                citiesList: {}
             }
         },
         methods: {
+            getCities() {
+                axios.get('/api/city.json').then((response) => {
+                    const res = response.data;
+                    if(res.status) {
+                        this.citiesList = res.data.cities;
+                        this.hotCitiesList = res.data.hotCities;
+                    }
+                });
+            }
         },
-        mounted: function () {
+        mounted () {
+            this.getCities();
         }
     }
 </script>

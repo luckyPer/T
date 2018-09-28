@@ -1,70 +1,47 @@
 <template>
-    <div class="list">
-        <div class="area">
-            <h2 class="title">当前城市</h2>
-            <ul class="button-list clearfix">
-                <li class="button-wrapper">
-                    <div class="button">上海</div>
-                </li>
-            </ul>
-        </div>
-        <div class="area">
-            <h2 class="title">热门城市</h2>
-            <ul class="button-list clearfix">
-                <li class="button-wrapper">
-                    <div class="button">上海</div>
-                </li>
-                <li class="button-wrapper">
-                    <div class="button">上海</div>
-                </li>
-                <li class="button-wrapper">
-                    <div class="button">上海</div>
-                </li>
-                <li class="button-wrapper">
-                    <div class="button">上海</div>
-                </li>
-            </ul>
-        </div>
-        <div class="area">
-            <h2 class="title">A</h2>
-            <ul class="item-list">
-                <li class="item-wrapper border-bottom">
-                    <div class="item">上海</div>
-                </li>
-                <li class="item-wrapper border-bottom">
-                    <div class="item">上海</div>
-                </li>
-                <li class="item-wrapper border-bottom">
-                    <div class="item">上海</div>
-                </li>
-                <li class="item-wrapper border-bottom">
-                    <div class="item">上海</div>
-                </li>
-            </ul>
-        </div>
-        <div class="area">
-            <h2 class="title">A</h2>
-            <ul class="item-list">
-                <li class="item-wrapper border-bottom">
-                    <div class="item">上海</div>
-                </li>
-                <li class="item-wrapper border-bottom">
-                    <div class="item">上海</div>
-                </li>
-                <li class="item-wrapper border-bottom">
-                    <div class="item">上海</div>
-                </li>
-                <li class="item-wrapper border-bottom">
-                    <div class="item">上海</div>
-                </li>
-            </ul>
+    <div class="list" ref="wrapper">
+        <div class="content">
+            <div class="area">
+                <h2 class="title">当前城市</h2>
+                <ul class="button-list clearfix">
+                    <li class="button-wrapper">
+                        <div class="button">上海</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="area">
+                <h2 class="title">热门城市</h2>
+                <ul class="button-list clearfix">
+                    <li class="button-wrapper" v-for="item in hotCitiesList" :key="item.id">
+                        <div class="button">{{item.name}}</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="area" v-for="(item, key) in citiesList" :key="key">
+                <h2 class="title">{{key}}</h2>
+                <ul class="item-list">
+                    <li class="item-wrapper border-bottom" v-for="city in item" :key="city.id">
+                        <div class="item">{{city.name}}</div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+    import BScroll from 'better-scroll'
     export default {
-        name: 'CityList'
+        name: 'CityList',
+        props: {
+            hotCitiesList: Array,
+            citiesList: Object
+        },
+        mounted () {
+            const wrapper = document.querySelector('.list');
+            //this.$refs.wrapper
+            const scroll = new BScroll(wrapper);
+        }
     }
 </script>
 
