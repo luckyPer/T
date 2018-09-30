@@ -15,6 +15,6 @@
 </script>
 
 <style lang="stylus" scoped>
-
+@import '~styles/common';
 </style>
 
