@@ -6,15 +6,40 @@
             </div>
             <div class="banner-info">
                 <p class="banner-title">上海杜莎夫人蜡像馆(AAAA景区)</p>
-                <p class="banner-number"><span class="iconfont icon-img">&#xe691;</span>39</p>
+                <p class="banner-number" @click="handelGallaryShow"><span class="iconfont icon-img">&#xe691;</span>39</p>
             </div>
         </div>
+        <gallary :imgs="imgs" v-show="showGallary" v-on:closeGallary="hanleGallaryClose"></gallary>
     </div>
 </template>
 
 <script>
+    import Gallary from '../gallary/Gallary.vue' 
     export default {
-        name: 'DetailBanner'
+        name: 'DetailBanner',
+        components: {
+            Gallary
+        },
+        data() {
+            return {
+                imgs: [
+                    'http://img1.qunarzz.com/sight/p0/1704/c9/c936f3fccfc6d7eda3.img.jpg_r_800x800_93bf62f1.jpg',
+                    'http://img1.qunarzz.com/sight/p0/1703/22/2244eaab209bf750a3.img.jpg_r_800x800_d4d9e847.jpg'
+                ],
+                showGallary: false
+            }
+        },
+        computed: {
+        },
+        methods: {
+            handelGallaryShow() {
+                if(this.imgs.length > 0)
+                    this.showGallary = true;
+            },
+            hanleGallaryClose() {
+                this.showGallary = false;
+            }
+        }
     }
 </script>
 
