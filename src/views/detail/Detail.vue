@@ -1,16 +1,20 @@
 <template>
     <div>
-        <div>deatil</div>
+        <detail-banner></detail-banner>
     </div>
 </template>
 
 <script>
+    import DetailBanner from '@/components/detail/Banner'
     export default {
-        name: 'Detail'
+        name: 'Detail',
+        components: {
+            DetailBanner
+        }
     }
 </script>
 
-<style>
+<style lang="stylus" scoped>
 
 </style>
 
