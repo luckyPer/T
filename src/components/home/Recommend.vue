@@ -3,7 +3,7 @@
         <p><span class="iconfont icon-like"></span>猜你喜欢</p>
         <ul class="recommend-list">
             <li class="recommend-item" v-for="item in recommendList" :key="item.id">
-                <router-link to="/detail">
+                <router-link :to="{name: 'detail', params: {id: item.id}}">
                     <div class="recommend-img">
                         <img :src="item.imgUrl" alt="">
                     </div>

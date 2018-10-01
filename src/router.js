@@ -13,7 +13,7 @@ export default new Router({
       alias: '/home'
     },
     {
-      path: '/detail',
+      path: '/detail/:id',
       name: 'detail',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
