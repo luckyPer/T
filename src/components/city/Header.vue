@@ -35,9 +35,6 @@
         text-align center
         font-size .32rem
     }
-}
-
-
-        
+}       
 </style>
 

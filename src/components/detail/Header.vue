@@ -40,6 +40,9 @@
                     this.showAbs = true;
                 }
             }
+        },
+        beforeDestroy() {
+            window.removeEventListener('scroll', this.handleScroll);
         }
     }
 </script>
@@ -56,6 +59,7 @@
     border-radius .4rem
     background-color rgba(0, 0, 0, .8)
     text-align center
+    z-index 99
     .header-abs-back {
         color #fff
         font-size .4rem
