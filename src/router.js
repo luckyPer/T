@@ -15,18 +15,15 @@ export default new Router({
     {
       path: '/detail/:id',
       name: 'detail',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/detail/Detail.vue')
+      component: () => import('./views/detail/Detail.vue')
     },
     {
       path: '/city',
       name: 'city',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/city/City.vue')
+      component: () => import('./views/city/City.vue')
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })

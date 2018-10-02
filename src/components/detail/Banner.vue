@@ -2,30 +2,35 @@
     <div>
         <div class="banner-warp">
             <div class="banner">
-                <img class="banner-img" src="//img1.qunarzz.com/sight/p0/1704/c9/c936f3fccfc6d7eda3.img.jpg_600x330_1be7ea5e.jpg" alt="">
+                <img class="banner-img" :src="bannerImg" alt="">
             </div>
             <div class="banner-info">
-                <p class="banner-title">上海杜莎夫人蜡像馆(AAAA景区)</p>
-                <p class="banner-number" @click="handelGallaryShow"><span class="iconfont icon-img">&#xe691;</span>39</p>
+                <p class="banner-title">{{sightName}}</p>
+                <p class="banner-number" @click="handelGallaryShow"><span class="iconfont icon-img">&#xe691;</span>{{gallaryImgs.length}}</p>
             </div>
         </div>
-        <gallary :imgs="imgs" v-show="showGallary" v-on:closeGallary="hanleGallaryClose"></gallary>
+        <fade-animation>
+            <gallary :imgs="gallaryImgs" v-show="showGallary" v-on:closeGallary="hanleGallaryClose"></gallary>
+        </fade-animation>
     </div>
 </template>
 
 <script>
     import Gallary from '../gallary/Gallary.vue' 
+    import FadeAnimation from '../fade/FadeAnimation.vue' 
     export default {
         name: 'DetailBanner',
         components: {
-            Gallary
+            Gallary,
+            FadeAnimation
+        },
+        props: {
+            sightName: String,
+            gallaryImgs: Array,
+            bannerImg: String
         },
         data() {
             return {
-                imgs: [
-                    'http://img1.qunarzz.com/sight/p0/1704/c9/c936f3fccfc6d7eda3.img.jpg_r_800x800_93bf62f1.jpg',
-                    'http://img1.qunarzz.com/sight/p0/1703/22/2244eaab209bf750a3.img.jpg_r_800x800_d4d9e847.jpg'
-                ],
                 showGallary: false
             }
         },
@@ -33,7 +38,7 @@
         },
         methods: {
             handelGallaryShow() {
-                if(this.imgs.length > 0)
+                if(this.gallaryImgs.length > 0)
                     this.showGallary = true;
             },
             hanleGallaryClose() {
